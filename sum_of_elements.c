@@ -2,19 +2,21 @@
 
 int SumOfElements(int array[], int size)
 {
+    int *ptr = array;
     int sum = 0;
     for (int i = 0; i < size; i++)
     {
-        sum += array[i];
+        sum += ptr[i];
     }
     return sum;
 }
 
 void Print(int array[], int size, int result)
 {
+    int *ptr = array;
     for (int i = 0; i < size; i++)
     {
-        printf(" The sum of array[%d] - %d\n", i, array[i]);
+        printf(" The sum of array[%d] - %d\n", i, ptr[i]);
     }
     printf("\n");
     printf("The sum of %d", result);
