@@ -1,0 +1,1 @@
+//Write a program in C to delete the first node of a Singly Linked List.

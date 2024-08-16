@@ -1,0 +1,1 @@
+//Write a program in C to delete a node from the middle of a Singly Linked List.
