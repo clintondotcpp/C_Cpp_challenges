@@ -1,0 +1,1 @@
+// Write a C program that converts a singly linked list into a string and returns it.
