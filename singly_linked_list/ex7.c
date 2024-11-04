@@ -41,10 +41,6 @@ void insertNodeNth(struct Node **head, int data, int position)
 
 void deleteNodeNth(struct Node **head, int position)
 {
-    if (*head == NULL)
-    {
-        return;
-    }
     struct Node *temp = *head;
     if (position == 0)
     {
@@ -53,38 +49,19 @@ void deleteNodeNth(struct Node **head, int position)
         return;
     }
 
-    // find the previous before the node to be deleted
-    for (int i = 0; temp != NULL && position - 1; i++)
-    {
-        temp = temp->next;
-    }
-
-    if (temp != NULL || temp->next != NULL)
+    if (temp == NULL || temp->next == NULL)
     {
         return;
     }
 
-    // Node to temp.next is the node to be deleted
-    struct Node *next = temp->next->next;
-
-    // unlink the node from the list
-    free(temp->next);
-    temp->next = next;
-}
-
-void reverseNode(struct Node **head)
-{
-    struct Node *prev = NULL;
-    struct Node *current = *head;
-    struct Node *next = NULL;
-    while (current->next != NULL)
+    for (int i = 0; temp != NULL && i < position - 1; i++)
     {
-        next = current->next;
-        current->next = prev;
-        current = prev;
-        prev = next;
+        temp = temp->next;
     }
-    *head = prev;
+
+    struct Node *next = temp->next;
+    free(temp);
+    temp->next = next;
 }
 
 void displayList(struct Node **head)
